@@ -12,11 +12,11 @@
 
     <div id="app">
         <h1>EMAIL LIST</h1>
-        <ul>
-            <li>
-                {{ email }}
+        <ol>
+            <li v-for="email in emails">
+                {{ email.emails }}
             </li>
-        </ul>
+        </ol>
      
     </div>
     
