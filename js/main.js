@@ -7,18 +7,18 @@ var { createApp } = Vue
 createApp({
     data(){
         return{
-            emails: [''],
+            emails: [],
         }   
     },
     mounted(){
-        for (let i = 1; i < 10; i++) {
-            let email = axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(
-                response => {
+        for (let i = 0 ; i < 10; i++) {
+            axios
+            .get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then(response => {
                     console.log(response.data.response);
-                    return response.data.response;
+                    this.emails.push(response.data.response);
                 })
-            this.emails.push(email);
+            
         } 
     }  
 }).mount('#app')
